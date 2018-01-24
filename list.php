@@ -20,12 +20,14 @@ $users = (new Classes\User())->getAll();
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Email</th>
+                <th>Action</th>
             </tr>
             <?php foreach ($users as $user): ?>
                 <tr>
                     <td><?php echo $user->getFirstName(); ?></td>
                     <td><?php echo $user->getLastName(); ?></td>
                     <td><?php echo $user->getEmail(); ?></td>
+                    <td> <a class="btn btn-primary" href="edit.php?email=<?php echo$user->getEmail();?> ">Edit</a>|<a class="btn btn-danger" href="delete.php?email=<?php echo$user->getEmail();?> ">Delete</a> </td>
                 </tr>
             <?php endforeach; ?>
         </table>

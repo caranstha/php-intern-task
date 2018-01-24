@@ -3,10 +3,14 @@
 namespace Classes;
 
 class User extends DB
-{
+{   private $id;
     private $firstName;
     private $lastName;
     private $email;
+
+    
+    
+
 
     /**
      * @return mixed
@@ -84,5 +88,34 @@ class User extends DB
         }
 
         return $users;
+    }
+
+
+
+    public function edituser($email) //
+        {
+            $query="select * from users where email='$email'";
+            return $this->db->query($query);
+            
+        }
+
+    public function updateuser($id,$email,$first_name,$last_name)//updating user details
+        {
+            
+            $query="UPDATE users 
+            SET first_name='$first_name',
+            last_name='$last_name',
+            email='$email' 
+            WHERE id='$id'";
+
+            return $this->db->query($query);  
+        }
+
+    public function deleteuser($email)
+    {
+
+        $query="Delete from users where email='$email'";
+        return $this->db->query($query); 
+
     }
 }
