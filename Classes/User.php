@@ -3,7 +3,7 @@
 namespace Classes;
 
 class User extends DB
-{   private $id;
+{  
     private $firstName;
     private $lastName;
     private $email;

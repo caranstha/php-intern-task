@@ -34,15 +34,17 @@ $email=$_GET['email'];
                 <input type="hidden" name="id" value="<?php echo$row['id'];?>">
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="text" class="form-control" id="email" name="email" value="<?php echo $row['email'];?>">
+                <input type="text" class="form-control" id="email" name="email" value="<?php echo $row['email'];?>" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Please enter valid email address" required="">
             </div>
             <div class="form-group">
                 <label for="first_name">First Name</label>
-                <input type="text" class="form-control" id="first_name" name="first_name" value="<?php echo $row['first_name'];?>">
+                <input type="text" class="form-control" id="first_name" name="first_name" value="<?php echo $row['first_name'];?>"
+                pattern="[a-z A-Z]+" title="First name should contains only letters" required="">
             </div>
             <div class="form-group">
                 <label for="last_name">Last Name</label>
-                <input type="text" class="form-control" id="last_name" name="last_name" value="<?php echo $row['last_name'];?>">
+                <input type="text" class="form-control" id="last_name" name="last_name" value="<?php echo $row['last_name'];?>" 
+                pattern="[a-z A-Z]+" title="Last name should contains only letters" required="" >
             </div>
               <div class="form-group">
                 <button type="submit" name="submit" class="btn btn-success">Save</button> 
